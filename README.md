@@ -108,10 +108,7 @@ Open and run `model.ipynb` to:
 - tqdm
 - pillow
 
-Install dependencies with:
-```bash
-pip install torch albumentations scikit-learn numpy matplotlib tqdm pillow
-```
+
 
 ---
 
@@ -122,4 +119,3 @@ pip install torch albumentations scikit-learn numpy matplotlib tqdm pillow
 
 ---
 
-**For questions or contributions, please open an issue or pull request!** 
