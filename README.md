@@ -20,8 +20,7 @@ This project implements a U-Net-based deep learning pipeline for brain tumor seg
 ## Project Structure
 ```
 BRAIN MRI U-Net/
-├── archive/                # Raw MRI data (organized by patient/study)
-│   └── kaggle_3m/          # Main dataset (TCGA, etc.)
+├── archive/                # Raw MRI data (organized by patient/study)         # Main dataset (TCGA, etc.)
 ├── processed_data/         # Preprocessed data (train/val/test splits)
 │   ├── train/
 │   ├── val/
@@ -33,14 +32,41 @@ BRAIN MRI U-Net/
 ├── final_model1.pth        # Saved trained model (version 1)
 ├── final_model2.pth        # Saved trained model (version 2)
 ├── checkpoints/            # Model checkpoints
-└── ...                     # Other supporting files and directories
+
 ```
 
 ---
 
 ## Dataset
-- **Source:** TCGA-LGG (Low Grade Glioma) MRI dataset, organized by patient.
-- **Raw Data:** Located in `archive/kaggle_3m/`, with each patient in a separate folder containing `.tif` images and corresponding `_mask.tif` files.
+## 📁 Dataset Information
+
+- **Source:**  
+  This dataset is derived from the **TCGA-LGG (The Cancer Genome Atlas - Lower Grade Glioma)** project and includes MRI scans sourced from **The Cancer Imaging Archive (TCIA)**. The data is organized by patient.
+
+- **Description:**  
+  The dataset consists of brain MR images with corresponding **manual FLAIR abnormality segmentation masks**. These masks highlight tumor regions for medical image segmentation tasks.
+
+- **Patients:**  
+  Includes MRI data from **110 patients** diagnosed with **lower-grade gliomas**. Each patient has available **FLAIR sequences** and **genomic cluster** information.
+
+- **Genomic Information:**  
+  Tumor genomic cluster data and patient metadata are available in the `data.csv` file.  
+  For more details on the genomic analysis, refer to the publication:  
+  **“Comprehensive, Integrative Genomic Analysis of Diffuse Lower-Grade Gliomas”**  
+  *(The New England Journal of Medicine, 2015)*  
+  🔗 [Link to publication](https://www.nejm.org/doi/full/10.1056/NEJMoa1402121)
+
+- **Raw Data Directory:**  
+  Path: `archive/lgg-mri-segmentation/kaggle_3m/`  
+  Each patient's folder contains:
+  - `.tif` files — Brain MRI slices  
+  - `_mask.tif` files — Corresponding binary segmentation masks
+
+- **Applications:**  
+  - Brain tumor segmentation  
+  - Radiogenomic analysis  
+  - Medical imaging model development
+
 - **Preprocessed Data:** Saved as `.npy` files in `processed_data/`, split into `train`, `val`, and `test` sets.
 
 ---
